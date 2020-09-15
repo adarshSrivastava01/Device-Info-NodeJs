@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     req.socket.remoteAddress ||
     (req.connection.socket ? req.connection.socket.remoteAddress : null);
   const headers = req.headers["user-agent"];
-  res.send(`<h1>IP Address: ${ip} ${headers}</h1>`);
+  res.send(`<h1>IP Address: ${ip}</h1><br><h1>User-Agent: ${headers}</h1>`);
 });
 
 app.listen(port);
