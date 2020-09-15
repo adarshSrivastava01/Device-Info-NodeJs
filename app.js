@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
     (req.connection.socket ? req.connection.socket.remoteAddress : null);
-  res.send(`<h1>IP Address: ${ip}</h1><br/><h1>Header: ${req.headers.user-agent}</h1>`);
+  res.send(`<h1>IP Address: ${ip}</h1>`);
   console.log(req.connection.remoteAddress);
 });
 
