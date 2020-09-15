@@ -9,9 +9,8 @@ app.get("/", (req, res) => {
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
     (req.connection.socket ? req.connection.socket.remoteAddress : null);
-  res.send(`<h1>IP Address: ${ip}</h1>`);
   console.log(req.headers["user-agent"]);
-  console.log(req.connection.remoteAddress);
+  res.send(`<h1>IP Address: ${ip}</h1>`);
 });
 
 app.listen(port);
