@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Hello");
-})
+});
 
 app.get("/ip", (req, res) => {
   const ip =
@@ -16,6 +17,4 @@ app.get("/ip", (req, res) => {
   console.log(req.connection.remoteAddress);
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.listen(port);
